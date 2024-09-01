@@ -29,5 +29,4 @@ class DiaryEntryRepository(context: Context) {
         return dao.selectById(id)
     }
 
-
 }
