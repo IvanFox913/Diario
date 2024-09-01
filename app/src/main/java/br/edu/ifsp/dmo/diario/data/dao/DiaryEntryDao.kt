@@ -14,14 +14,14 @@ interface DiaryEntryDao {
     suspend fun insert(diaryEntry: DiaryEntry): Long
 
     @Update
-    suspend fun updateDiaryEntry(diaryEntry: DiaryEntry): Int
+    suspend fun update(diaryEntry: DiaryEntry): Int
 
     @Delete
-    suspend fun deleteDiaryEntry(diaryEntry: DiaryEntry): Int
+    suspend fun delete(diaryEntry: DiaryEntry): Int
 
     @Query("SELECT * FROM diary_entry ORDER BY date DESC")
     suspend fun selectAll(): List<DiaryEntry>
 
     @Query("SELECT * FROM diary_entry WHERE id = :id LIMIT 1")
-    suspend fun selectById(id: Int): DiaryEntry
+    suspend fun selectById(id: Long): DiaryEntry
 }
