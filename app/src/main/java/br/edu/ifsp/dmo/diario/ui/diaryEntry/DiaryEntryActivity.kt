@@ -1,4 +1,4 @@
-package br.edu.ifsp.dmo.diario.ui.main
+package br.edu.ifsp.dmo.diario.ui.diaryEntry
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge

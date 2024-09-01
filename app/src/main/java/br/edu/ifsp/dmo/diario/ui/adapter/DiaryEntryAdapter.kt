@@ -1,4 +1,4 @@
-package br.edu.ifsp.dmo.diario.ui.apadter
+package br.edu.ifsp.dmo.diario.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.View

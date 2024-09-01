@@ -26,7 +26,8 @@ class DiaryEntry (
     @ColumnInfo(name = "text")
     var text: String
 ){
-
+    /*
     @Ignore
     private val formatterDate = DateTimeFormatter.ofPattern("dd/MM/yyyy")
+     */
 }
