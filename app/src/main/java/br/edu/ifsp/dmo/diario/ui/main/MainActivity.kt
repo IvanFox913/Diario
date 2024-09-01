@@ -46,8 +46,8 @@ class MainActivity : AppCompatActivity(), DiaryEntryItemClickListener {
         startActivity(mIntent)
     }
 
-    override fun clickDeleteDiaryEntry(position: Int) {
-        viewModel.deleteDiaryEntry(position.toLong())
+    override fun clickDeleteDiaryEntry(position: Long) {
+        viewModel.deleteDiaryEntry(position)
     }
 
     private fun setupListeners() {

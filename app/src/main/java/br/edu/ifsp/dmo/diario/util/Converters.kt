@@ -1,6 +1,7 @@
 package br.edu.ifsp.dmo.diario.util
 
 import androidx.room.TypeConverter
+import java.text.SimpleDateFormat
 import java.util.Date
 
 class Converters {
@@ -14,4 +15,5 @@ class Converters {
     fun dateToTimestamp(date: Date?): Long? {
         return date?.time
     }
+
 }
