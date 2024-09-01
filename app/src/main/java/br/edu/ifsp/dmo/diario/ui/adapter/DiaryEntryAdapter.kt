@@ -30,6 +30,8 @@ class DiaryEntryAdapter(private val listener: DiaryEntryItemClickListener) : Rec
         holder.binding.textviewTitleField.text = diaryEntry.title
         holder.binding.textviewLocationField.text = diaryEntry.location
 
+        holder.binding.textviewEntryField.text = diaryEntry.text
+
         holder.binding.buttonDelete.setOnClickListener(){listener.clickDeleteDiaryEntry(position)}
     }
     override fun getItemCount(): Int {
