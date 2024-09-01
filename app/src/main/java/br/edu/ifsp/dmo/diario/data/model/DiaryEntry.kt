@@ -12,7 +12,7 @@ class DiaryEntry (
 
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")
-    val id: Int,
+    var id: Long = 0,
 
     @ColumnInfo(name = "title")
     var title: String,

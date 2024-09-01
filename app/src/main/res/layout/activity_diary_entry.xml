@@ -20,7 +20,7 @@
         app:layout_constraintStart_toStartOf="parent"/>
 
     <EditText
-        android:id="@+id/textview_title_field"
+        android:id="@+id/edittext_title"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="10dp"
@@ -41,7 +41,7 @@
         app:layout_constraintStart_toStartOf="parent"/>
 
     <EditText
-        android:id="@+id/textview_location_field"
+        android:id="@+id/edittext_location"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="10dp"
@@ -72,6 +72,7 @@
         app:layout_constraintStart_toEndOf="@id/textview_date_pseudolabel"/>
 
     <ImageButton
+        android:id="@+id/button_set_date"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:src="@drawable/ic_date_edit"
@@ -104,6 +105,7 @@
         app:layout_constraintTop_toTopOf="@id/textview_time_pseudolabel"/>
 
     <ImageButton
+        android:id="@+id/button_set_time"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:src="@drawable/ic_time_edit"
@@ -126,7 +128,7 @@
         app:layout_constraintStart_toStartOf="parent"/>
 
     <EditText
-        android:id="@+id/textview_entry_field"
+        android:id="@+id/edittext_entry"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="10dp"
