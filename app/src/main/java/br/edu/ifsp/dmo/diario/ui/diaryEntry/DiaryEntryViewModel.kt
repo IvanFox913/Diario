@@ -7,6 +7,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import br.edu.ifsp.dmo.diario.data.model.DiaryEntry
 import br.edu.ifsp.dmo.diario.data.repository.DiaryEntryRepository
+import br.edu.ifsp.dmo.diario.util.DateConversor
 import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
 import java.util.Calendar
@@ -44,7 +45,7 @@ class DiaryEntryViewModel(private val repository: DiaryEntryRepository) : ViewMo
 
     fun insertDiaryEntry(title: String, location: String, date: String, time: String, text: String ){
 
-        val dateFinal: Date = dateFormatToDateObject(date, time)
+        val dateFinal: Date = DateConversor.dateFormatToDateObject(date, time)
 
         val diaryEntry = DiaryEntry(title = title, location = location, date = dateFinal, text = text)
 
@@ -69,38 +70,11 @@ class DiaryEntryViewModel(private val repository: DiaryEntryRepository) : ViewMo
                 _isUpdate.value = true
                 _title.value = diaryEntry.title
                 _location.value = diaryEntry.location
-                _date.value = dateFormatToDateString(diaryEntry.date)
-                _time.value = dateFormatToTimeString(diaryEntry.date)
+                _date.value = DateConversor.dateFormatToTimeString(diaryEntry.date)
+                _time.value = DateConversor.dateFormatToTimeString(diaryEntry.date)
                 _text.value = diaryEntry.text
             }
         }
     }
 
-    private fun dateFormatToDateObject(date: String, time: String): Date{
-
-        val dateTimeFormat = SimpleDateFormat("dd/MM/yyyy HH:mm", Locale.getDefault())
-        val dateTimeString = "$date $time"
-        var combinedDate: Date? = Calendar.getInstance().time
-
-        try{
-            combinedDate = dateTimeFormat.parse(dateTimeString)
-        } catch (e : Exception){
-            Log.e("DiaryEntryDate", "Date ${combinedDate.toString()}", e)
-        }
-
-
-        val dateFinal: Date = combinedDate ?: Date()
-
-        return dateFinal
-    }
-
-    private fun dateFormatToDateString(date: Date): String{
-        val dateFormat = SimpleDateFormat("dd/MM/yyyy")
-        return dateFormat.format(date)
-    }
-
-    private fun dateFormatToTimeString(date: Date): String{
-        val timeFormat = SimpleDateFormat("HH:mm")
-        return timeFormat.format(date)
-    }
 }
