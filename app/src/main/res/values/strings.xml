@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">Diario</string>
+
+    <!-- Main -->
+    <string name="diary_entries">Diary Entries</string>
+
+    <!-- ItemDiaryEntry -->
+    <string name="Item_Diary_Entry_title">Title:</string>
+    <string name="Item_Diary_Entry_Location">Location:</string>
+    <string name="Item_Diary_Entry_Date">Date:</string>
+    <string name="Item_Diary_Entry_Time">Time:</string>
+    <string name="Item_Diary_Entry_Entry">Entry:</string>
+
+    <!-- DiaryEntry -->
+    <string name="button_save">Save</string>
+    <string name="button_update">Update</string>
+    <string name="button_cancel">Cancel</string>
 </resources>
