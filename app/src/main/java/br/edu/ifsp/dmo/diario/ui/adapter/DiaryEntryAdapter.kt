@@ -14,7 +14,7 @@ import br.edu.ifsp.dmo.diario.util.DateConversor
 class DiaryEntryAdapter(private val listener: DiaryEntryItemClickListener) : RecyclerView.Adapter<DiaryEntryAdapter.ViewHolder>() {
 
     private var dataset: List<DiaryEntry> = emptyList()
-    private var converter: Converters = Converters()
+
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val binding: ItemDiaryEntryBinding = ItemDiaryEntryBinding.bind(view)
@@ -36,6 +36,11 @@ class DiaryEntryAdapter(private val listener: DiaryEntryItemClickListener) : Rec
         holder.binding.textviewEntryField.text = diaryEntry.text
 
         holder.binding.buttonDelete.setOnClickListener(){listener.clickDeleteDiaryEntry(diaryEntry.id)}
+
+        holder.itemView.setOnClickListener {
+            listener.clickOpenDiaryEntry(diaryEntry.id)
+        }
+
     }
     override fun getItemCount(): Int {
         return dataset.size

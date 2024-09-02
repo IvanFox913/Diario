@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import br.edu.ifsp.dmo.diario.data.model.DiaryEntry
 import br.edu.ifsp.dmo.diario.data.repository.DiaryEntryRepository
 import br.edu.ifsp.dmo.diario.databinding.ActivityMainBinding
 import br.edu.ifsp.dmo.diario.ui.adapter.DiaryEntryAdapter
@@ -38,11 +39,10 @@ class MainActivity : AppCompatActivity(), DiaryEntryItemClickListener {
         viewModel.checkDatabase()
     }
 
-    override fun clickOpenDiaryEntry(position: Int) {
+    override fun clickOpenDiaryEntry(position: Long) {
 
-        val diaryEntry = adapter.getDatasetItem(position)
         val mIntent = Intent(this, DiaryEntryActivity::class.java)
-        mIntent.putExtra(Constant.DIARY_ENTRY_ID, diaryEntry.id)
+        mIntent.putExtra(Constant.DIARY_ENTRY_ID, position)
         startActivity(mIntent)
     }
 

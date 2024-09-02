@@ -11,6 +11,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import br.edu.ifsp.dmo.diario.data.repository.DiaryEntryRepository
 import br.edu.ifsp.dmo.diario.databinding.ActivityDiaryEntryBinding
+import br.edu.ifsp.dmo.diario.util.Constant
 import br.edu.ifsp.dmo.diario.util.DateConversor
 import java.util.Calendar
 import java.util.Date
@@ -31,16 +32,23 @@ class DiaryEntryActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListen
         val factory = DiaryEntryViewModelFactory(DiaryEntryRepository(applicationContext))
         viewModel = ViewModelProvider(this, factory).get(DiaryEntryViewModel::class.java)
 
+        handleBundle()
         setupUi()
         setupListeners()
         setupObservers()
+    }
+
+    private fun handleBundle(){
+        if (intent.hasExtra(Constant.DIARY_ENTRY_ID)){
+            val id = intent.getLongExtra(Constant.DIARY_ENTRY_ID, -1)
+            viewModel.showEvent(id)
+        }
     }
 
     private fun setupUi(){
         binding.textviewDate.text = DateConversor.dateFormatToDateString(Date())
         binding.textviewTime.text = DateConversor.dateFormatToTimeString(Date())
     }
-
 
     private fun setupListeners() {
 
@@ -118,9 +126,8 @@ class DiaryEntryActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListen
         })
 
         viewModel.text.observe(this, Observer {
-            binding.textviewEntry.setText(it)
+            binding.edittextEntry.setText(it)
         })
-
     }
 
     override fun onDateSet(datepicker: DatePicker, year: Int, month: Int, dayOfMonth: Int) {

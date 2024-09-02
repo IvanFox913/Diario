@@ -70,7 +70,7 @@ class DiaryEntryViewModel(private val repository: DiaryEntryRepository) : ViewMo
                 _isUpdate.value = true
                 _title.value = diaryEntry.title
                 _location.value = diaryEntry.location
-                _date.value = DateConversor.dateFormatToTimeString(diaryEntry.date)
+                _date.value = DateConversor.dateFormatToDateString(diaryEntry.date)
                 _time.value = DateConversor.dateFormatToTimeString(diaryEntry.date)
                 _text.value = diaryEntry.text
             }
