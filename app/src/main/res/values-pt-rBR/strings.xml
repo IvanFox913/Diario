@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Diario</string>
+
+    <!-- Main -->
+    <string name="diary_entries">Passagens</string>
+
+    <!-- ItemDiaryEntry -->
+    <string name="Item_Diary_Entry_title">Título:</string>
+    <string name="Item_Diary_Entry_Location">Local:</string>
+    <string name="Item_Diary_Entry_Date">Data:</string>
+    <string name="Item_Diary_Entry_Time">Horário:</string>
+    <string name="Item_Diary_Entry_Entry">Registro:</string>
+
+    <!-- DiaryEntry -->
+    <string name="button_save">Salvar</string>
+    <string name="button_update">Atualizar</string>
+    <string name="button_cancel">Cancelar</string>
+</resources>
